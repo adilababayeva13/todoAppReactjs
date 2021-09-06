@@ -4,13 +4,6 @@ import Header from "./header";
 import Input from "./input";
 
 
-var css={
-    width:600,
-    marginTop:150,
-
-    
-        
-}
 class App extends React.Component{
  
     render(){
