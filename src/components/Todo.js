@@ -29,10 +29,11 @@ class Todo extends React.Component {
     }
   render() {
     return (
-      <div className="my-3">
+      <div className="my-3" >
+
         <div className=" todo bg-dark text-light d-flex justify-content-between">
           <div style={{color:"pink"}} className="pl-2 py-2">{this.props.todo}</div>
-          {/* update ucun gerekli hisse */}
+    
           <div>
             {this.state.show?<div><input
                 placeholder="Update"
@@ -40,7 +41,7 @@ class Todo extends React.Component {
                 ref={this.val}  
                   ></input>
 
-<button className="update" onClick={this.upd}>update</button></div>:<div/>}
+          <button className="update" onClick={this.upd}>update</button></div>:<div/>}
           
 
           </div>
