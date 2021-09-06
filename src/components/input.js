@@ -1,6 +1,7 @@
 import React from "react"
 import BoxTodo from "./boxTodo";
 import Todo from "./Todo";
+import { v4 as uuidv4 } from 'uuid';
 import "./style.css";
 class Input extends React.Component{
     constructor(props){
@@ -30,9 +31,10 @@ class Input extends React.Component{
     }
     del(i){
         var arr=this.state.todos;
-        arr.pop(i);
+        arr.splice(i,1);
         this.setState({todos:arr});
     }
+    
     update(value,index){
        if(value!==""){
         var arr=this.state.todos;
@@ -43,9 +45,18 @@ class Input extends React.Component{
 
     }
     generate(){
+    
         var arr=this.state.todos;
         var items=arr.map((todo,index)=> (
-            <Todo update={this.update} del={this.del} index={index} key={`${todo}-${index}`} todo={todo} ></Todo>
+            <Todo 
+                update={this.update}
+                del={this.del}
+                index={index}
+                key={uuidv4()} 
+                todo={todo}
+             >
+
+            </Todo>
         
           ));
         return(<BoxTodo items={items}/> ) ;
